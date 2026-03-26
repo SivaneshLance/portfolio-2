@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useTheme } from "../App";
 
-const roles = ["ML Engineer", "Full Stack Developer", "React Developer", "AI Researcher"];
+const roles = [ "Full Stack Developer"];
 
 export default function Hero({ onHire, setActivePage }) {
   const { theme } = useTheme();

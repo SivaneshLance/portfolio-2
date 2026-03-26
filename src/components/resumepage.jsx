@@ -1,4 +1,5 @@
 import { useTheme } from "../App";
+import resumeFile from "./files/Resume.pdf";
 
 function Section({ title, children, isDark }) {
   return (
@@ -68,14 +69,15 @@ export default function ResumePage() {
                 </a>
               </div>
             </div>
-            <div className="sm:ml-auto">
-              <a
-                href="mailto:Sivaneshgk2001@gmail.com?subject=Hiring Inquiry"
-                className="px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 block text-center whitespace-nowrap"
-              >
-                Download / Contact
-              </a>
-            </div>
+           <div className="sm:ml-auto">
+  <a
+    href={resumeFile}
+    download="Resume.pdf"
+    className="px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 block text-center whitespace-nowrap"
+  >
+    Download Resume 📄
+  </a>
+</div>
           </div>
         </div>
 
