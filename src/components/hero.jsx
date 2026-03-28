@@ -135,7 +135,7 @@ export default function Hero({ onHire, setActivePage }) {
           <div className="flex gap-8 mt-14 justify-center lg:justify-start">
             {[
               { num: "2+", label: "Projects Published" },
-              { num: "IEEE", label: "Paper Applied" },
+              { num: "IEEE", label: "Paper Published" },
               { num: "CSE", label: "M.E Graduate" },
             ].map((s) => (
               <div key={s.label} className="text-center lg:text-left">
@@ -180,7 +180,7 @@ export default function Hero({ onHire, setActivePage }) {
             {/* Floating chips */}
             <FloatingChip className="absolute -top-4 -right-4" label="React JS" delay="0s" isDark={isDark} />
             <FloatingChip className="absolute -bottom-4 -left-4" label="Machine Learning" delay="0.5s" isDark={isDark} />
-            <FloatingChip className="absolute top-1/2 -right-16 -translate-y-1/2" label="Deep Learning" delay="1s" isDark={isDark} />
+            <FloatingChip className="absolute top-1/2 -right-16 -translate-y-1/2" label="Fullstack" delay="1s" isDark={isDark} />
           </div>
 
           {/* Decorative ring */}

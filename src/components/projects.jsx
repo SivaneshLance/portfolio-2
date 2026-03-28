@@ -15,13 +15,13 @@ const projects = [
   },
   {
     title: "Smart Radiology System: Pneumonia Identification",
-    type: "IEEE Paper Applied",
-    badge: "Conference 2024",
+    type: "IEEE Paper Published",
+    badge: "Conference 2025",
     badgeColor: "#3b82f6",
     tags: ["Deep Learning", "VGG16", "CNN", "Medical AI"],
     description:
       "Develops a Smart Radiology System to identify pneumonia using a VGG16-enhanced CNN model on chest X-ray images. Enables faster and more reliable medical decision-making with high accuracy.",
-    link: "#",
+    link: "https://ieeexplore.ieee.org/document/11436696",
     icon: "🫁",
     gradient: "from-blue-700 to-indigo-800",
   },

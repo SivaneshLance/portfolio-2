@@ -3,13 +3,14 @@ import { useTheme } from "../App";
 const skills = [
   { name: "React JS", level: 75, color: "#61dafb" },
   { name: "Machine Learning", level: 80, color: "#3b82f6" },
-  { name: "Deep Learning / CNN", level: 78, color: "#2563eb" },
+  // { name: "Deep Learning / CNN", level: 78, color: "#2563eb" },
   { name: "Python", level: 82, color: "#1d4ed8" },
-  { name: "Java", level: 70, color: "#60a5fa" },
+  // { name: "Java", level: 70, color: "#60a5fa" },
   { name: "RedHat Linux", level: 65, color: "#3b82f6" },
 ];
 
 const highlights = [
+  // { icon: "🎓", title: "B.E in CSE", desc: "Velammal Engineering College,2019–2024" },
   { icon: "🎓", title: "M.E in CSE", desc: "St Joseph's College of Engineering, 2024–2026" },
   { icon: "🔬", title: "IEEE Research", desc: "Applied for IEEE Paper on Smart Radiology System" },
   { icon: "📊", title: "Published Journal", desc: "Sales Prediction ML paper – IJIRSET 2023" },
@@ -90,7 +91,7 @@ export default function About() {
             <div className="mt-10">
               <h4 className={`text-sm font-semibold mb-4 ${isDark ? "text-gray-400" : "text-gray-500"}`}>Also familiar with</h4>
               <div className="flex flex-wrap gap-2">
-                {["C++", "PHP", "K-Means", "Linear Regression", "VGG16", "CNN", "Linux CLI", "IBM Cloud"].map((tag) => (
+                {["K-Means", "Linear Regression", "VGG16", "CNN", "Linux CLI", "IBM Cloud"].map((tag) => (
                   <span
                     key={tag}
                     className={`px-3 py-1 rounded-full text-xs font-medium border ${

@@ -87,7 +87,7 @@ export default function Navbar({ activePage, setActivePage, onHire }) {
             <span className="text-white font-black text-sm">SK</span>
           </div>
           <span className={`font-bold text-lg tracking-tight hidden sm:block ${isDark ? "text-white" : "text-gray-900"}`}>
-            Sivanesh<span className="text-blue-500">.</span>
+            Sivanesh<span className="text-blue-500"></span>
           </span>
         </button>
 

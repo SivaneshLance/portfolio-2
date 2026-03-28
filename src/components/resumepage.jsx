@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTheme } from "../App";
 import resumeFile from "./files/Resume.pdf";
 
@@ -43,49 +44,71 @@ function TimelineItem({ period, title, subtitle, desc, link, isDark }) {
 export default function ResumePage() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const [showResume, setShowResume] = useState(false);
 
   return (
     <div className="min-h-screen pt-28 pb-16">
       <div className="max-w-4xl mx-auto px-6">
+
         {/* Header */}
         <div className={`rounded-3xl p-8 mb-8 border relative overflow-hidden ${
           isDark ? "bg-gray-900 border-white/10" : "bg-white border-gray-200 shadow-lg shadow-blue-100"
         }`}>
           <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10 -translate-y-1/2 translate-x-1/2"
             style={{ background: "radial-gradient(circle, #3b82f6, transparent)" }} />
-          
+
           <div className="relative flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-xl shadow-blue-500/30 shrink-0">
               <span className="text-white font-black text-2xl">SK</span>
             </div>
-            <div className="text-center sm:text-left">
+            <div className="text-center sm:text-left flex-1">
               <h1 className={`text-3xl md:text-4xl font-black ${isDark ? "text-white" : "text-gray-900"}`}>Sivanesh K</h1>
               <p className="text-blue-500 font-semibold mt-1">ML Engineer · Full Stack Developer</p>
               <div className={`flex flex-wrap gap-4 mt-3 text-sm justify-center sm:justify-start ${isDark ? "text-gray-400" : "text-gray-500"}`}>
                 <span className="flex items-center gap-1">📍 Pallikaranai, Chennai – 600100</span>
-                <span className="flex items-center gap-1">📞 +91 8220488520</span>
+                {/* <span className="flex items-center gap-1">📞 +91 8220488520</span> */}
                 <a href="mailto:Sivaneshgk2001@gmail.com" className="flex items-center gap-1 text-blue-500 hover:text-blue-400">
                   ✉️ Sivaneshgk2001@gmail.com
                 </a>
               </div>
             </div>
-           <div className="sm:ml-auto">
-  <a
-    href={resumeFile}
-    download="Resume.pdf"
-    className="px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 block text-center whitespace-nowrap"
-  >
-    Download Resume 📄
-  </a>
-</div>
+
+            {/* View Resume Button */}
+            <div className="sm:ml-auto">
+              <button
+                onClick={() => setShowResume(true)}
+                className="px-6 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-blue-600 to-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition-all duration-300 block text-center whitespace-nowrap"
+              >
+                View Resume 📄
+              </button>
+            </div>
           </div>
         </div>
+
+        {/* Resume Modal */}
+        {showResume && (
+          <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+            <div className="bg-white rounded-2xl shadow-xl w-[90%] h-[90%] relative">
+              <button
+                onClick={() => setShowResume(false)}
+                className="absolute top-3 right-4 text-xl font-bold text-gray-600 hover:text-red-500"
+              >
+                ✖
+              </button>
+              <iframe
+                src={resumeFile}
+                title="Resume"
+                className="w-full h-full rounded-2xl"
+              />
+            </div>
+          </div>
+        )}
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Main Column */}
           <div className="md:col-span-2 space-y-2">
             <div className={`rounded-3xl p-8 border ${isDark ? "bg-gray-900 border-white/10" : "bg-white border-gray-200 shadow-sm"}`}>
-              
+
               {/* Summary */}
               <Section title="Summary" isDark={isDark}>
                 <p className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}>
@@ -120,10 +143,11 @@ export default function ResumePage() {
                   isDark={isDark}
                 />
                 <TimelineItem
-                  period="2024"
+                  period="2025"
                   title="Smart Radiology System: Pneumonia Identification via VGG16-Enhanced CNN"
-                  subtitle="Applied — IEEE Conference Paper"
+                  subtitle="Published — IEEE Conference Paper"
                   desc="Develops a deep-learning based Smart Radiology System to automatically detect and classify pneumonia from chest X-ray images with improved diagnostic performance."
+                  link="https://ieeexplore.ieee.org/document/11436696"
                   isDark={isDark}
                 />
               </Section>
@@ -148,7 +172,7 @@ export default function ResumePage() {
               <h3 className={`font-black text-sm uppercase tracking-widest mb-4 ${isDark ? "text-blue-400" : "text-blue-600"}`}>
                 Technical Skills
               </h3>
-              {["React JS", "Machine Learning", "Deep Learning", "Python", "Java", "C++", "PHP", "Linux"].map((s) => (
+              {["React JS", "Machine Learning", "Python", "Linux"].map((s) => (
                 <div key={s} className={`flex items-center gap-2 py-1.5 border-b last:border-0 ${isDark ? "border-white/5" : "border-gray-100"}`}>
                   <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
                   <span className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>{s}</span>
@@ -162,9 +186,9 @@ export default function ResumePage() {
                 Languages
               </h3>
               {[
-                { lang: "English", level: "Proficient" },
-                { lang: "Tamil", level: "Native" },
-                { lang: "Telugu", level: "Conversational" },
+                { lang: "English"},
+                { lang: "Tamil" },
+                { lang: "Telugu"  },
               ].map((l) => (
                 <div key={l.lang} className="flex justify-between items-center py-1.5">
                   <span className={`text-sm ${isDark ? "text-gray-300" : "text-gray-700"}`}>{l.lang}</span>

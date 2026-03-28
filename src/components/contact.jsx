@@ -85,7 +85,7 @@ export default function Contact() {
           <div className="md:col-span-2 space-y-4">
             {[
               { icon: "📧", label: "Email", value: "Sivaneshgk2001@gmail.com", href: "mailto:Sivaneshgk2001@gmail.com" },
-              { icon: "📱", label: "Phone", value: "+91 8220488520", href: "tel:+918220488520" },
+              // { icon: "📱", label: "Phone", value: "+91 8220488520", href: "tel:+918220488520" },
               { icon: "📍", label: "Location", value: "Pallikaranai, Chennai - 600100", href: null },
             ].map((item) => (
               <div
